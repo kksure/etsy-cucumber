@@ -31,23 +31,17 @@ class AdvancedSearchPage
   end
 
   def wait_for_element_present element
-    startTime = Date.today
-    puts "start time #{startTime}"
-    while true
-      begin
-        @browser.find_element(:xpath, element)
-      rescue NoSuchElementError => e
-        currentTime = Date.today
-        span = currentTime - startTime
-        puts "current time #{currentTime}"
-        puts "span #{span}"
+    @browser.wait(elementPresent element)
+  end
 
-        if span >= 5000
-          raise "Could not open file"
-        else
-          sleep 500
-        end
-      end
+  private
+  def elementPresent(element)
+    begin
+      @browser.findElement(:xpath, element)
+      return true
+    rescue
+      return false
     end
   end
+
 end
