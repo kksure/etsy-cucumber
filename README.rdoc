@@ -1,6 +1,11 @@
 = etsy-cucumber
 
-Description goes here.
+Steps to get this project running on your machine:
+
+1. Install cucumber gem [I used cucumber (0.10.0)]
+2. Install selenium-webdriver gem [I used selenium-webdriver (0.1.3)]
+3. Checkout the code from https://github.com/kksure/etsy-cucumber
+4. From etsy-cucumber folder, run the command 'cucumber' 
 
 == Contributing to etsy-cucumber
  
