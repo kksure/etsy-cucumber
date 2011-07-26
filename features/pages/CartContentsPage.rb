@@ -7,7 +7,7 @@ class CartContentsPage
   end
 
   def hasItem
-    @browser.navigate.to "http://www.etsy.com/cartcheckout.php"
+    @browser.navigate.to "http://www.etsy.com/cart"
     begin
       @browser.find_element(:xpath, "//div[@id='checkout-header']/h1[contains(text(),'1 item in your cart')]")
     rescue
@@ -16,12 +16,12 @@ class CartContentsPage
   end
 
   def removeItem
-    @browser.navigate.to "http://www.etsy.com/cartcheckout.php"
+    @browser.navigate.to "http://www.etsy.com/cart"
     @browser.find_element(:xpath, "//a[@rel = 'remove']").click()
   end
 
   def verifyCartIsEmpty
-    @browser.navigate.to "http://www.etsy.com/cartcheckout.php"
+    @browser.navigate.to "http://www.etsy.com/cart"
 #    begin
       @browser.find_element(:xpath, "//div[@id='empty-cart']")
 #    rescue
